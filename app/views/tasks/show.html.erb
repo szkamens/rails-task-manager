@@ -1,5 +1,15 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
-<p><%= @task.completed %></p>
+<input type="checkbox" <%= @task.completed ? "checked" : " " %> />
+<p> <%= @task.completed ? "Complete!" : "Task is not complete yet.." %> </p>
+<br>
 
+
+<%= link_to "~ Edit #{@task.title}", edit_task_path(@task) %>
+<br>
+<%= link_to "x Delete #{@task.title}",
+  task_path(@task),
+  method: :delete,
+  data: { confrim: "Are you sure you want to delete?" } %>
+<br>
 <%= link_to "← Back to tasks list", tasks_path %>
