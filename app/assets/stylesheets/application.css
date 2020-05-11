@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.container {
-  height: 100vh;
-  width: 50vh;
-}
